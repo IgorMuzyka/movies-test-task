@@ -1,0 +1,60 @@
+
+import XCTest
+/*@testable */import TheMovieDB
+import Combine
+import Moya
+import CombineMoya
+
+final class TheMovieDBTests: XCTestCase {
+    // MARK: - Tests
+    func testPopularMoviesEndpoint() throws {
+        let movies = try awaitPublisher(provider.popularMoviesPublisher(page: 1)).results
+        XCTAssertEqual(movies.count, 20)
+    }
+    func testGenreListEndpoint() throws {
+        let genres = try awaitPublisher(provider.genresPublisher()).genres
+        XCTAssert(!genres.isEmpty)
+    }
+    func testMovieVideosEndpoint() throws {
+        let movies = try awaitPublisher(provider.popularMoviesPublisher(page: 1)).results
+        var videos: [Video] = []
+        for movie in movies {
+            let movieVideos = try awaitPublisher(provider.movieVides(for: movie.id)).results
+            videos.append(contentsOf: movieVideos)
+        }
+        XCTAssert(!videos.isEmpty)
+    }
+    func testSearchMovieEndpoint() throws {
+        let searchResults = try awaitPublisher(provider.searchMovie(query: "Star Wars", page: 1)).results
+        XCTAssert(!searchResults.isEmpty)
+    }
+//    func testDiscoverMovieVideoTypes() {
+//        var page: Int = 1
+//        let stop: Int = 20
+//        var uniqueTypes: Set<Video.`Type`> = []
+//        repeat {
+//            let movies = try awaitPublisher(provider.popularMoviesPublisher(page: page)).results
+//            for movie in movies {
+//                let movieVideos = try awaitPublisher(provider.movieVides(for: movie.id)).results
+//                for type in movieVideos.map(\.type) {
+//                    uniqueTypes.insert(type)
+//                }
+//            }
+//            page += 1
+//            print(page)
+//        } while page < stop
+//        for type in uniqueTypes {
+//            print(type.rawValue)
+//        }
+//    }
+    // MARK: - Accessors
+    private lazy var provider: MoyaProvider<TheMovieDBAPI> = {
+        .init(plugins: [
+            AuthorizationPlugin { [unowned self] in token }
+        ])
+    }()
+    /// yeah i know this is a malpractice, but this is a test task
+    private var token: String {
+        "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjE0YjRmMDg3YjIyZTNkMTQ0MTIyOGNhNDg1MTI2ZCIsIm5iZiI6MTcxOTM5NzI4OC4xNzMyNzgsInN1YiI6IjY2N2JlYjJhODdiYmNlMzgyZGFhNmU4YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BmPgf7-U0Olu1ZlaQ6Dn3U_cFpwAtKppWJggvxr4oxI"
+    }
+}
