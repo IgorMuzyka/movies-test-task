@@ -1,5 +1,5 @@
 
-import Foundation
+import Foundation.NSURLRequest
 import Moya
 
 public struct AuthorizationPlugin: PluginType {

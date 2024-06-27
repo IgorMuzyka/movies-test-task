@@ -2,6 +2,8 @@
 public struct MoviesResponse: Codable {
     public let page: Int
     public let results: [Movie]
+    public let totalPages: Int
+    public let totalResults: Int
 }
 
 import Foundation.NSDate
@@ -24,13 +26,4 @@ public struct Movie: Codable {
     public let originalLanguage: String
     public let originalTitle: String
     public let video: Bool
-    /// passing `.none` or `nil` as width return `URL` for original size image
-    public func posterURL(width: Int? = 500) -> URL? {
-        guard let posterPath else { return .none }
-        let url = TheMovieDBAPI.staticImagesBaseURL
-        guard let width else {
-            return url.appendingPathComponent("original").appendingPathComponent(posterPath)
-        }
-        return url.appendingPathComponent("w\(width)").appendingPathComponent(posterPath)
-    }
 }

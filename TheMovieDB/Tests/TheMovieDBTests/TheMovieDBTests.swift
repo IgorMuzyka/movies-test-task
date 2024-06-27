@@ -6,27 +6,44 @@ import Moya
 import CombineMoya
 
 final class TheMovieDBTests: XCTestCase {
+    override class func setUp() {
+        super.setUp()
+        CachePlugin.setCacheSize(memory: 0, disk: 0)
+    }
     // MARK: - Tests
-    func testPopularMoviesEndpoint() throws {
-        let movies = try awaitPublisher(provider.popularMoviesPublisher(page: 1)).results
+    func testDiscoverMoviesEndpoint() throws {
+        let movies = try awaitPublisher(apiProvider.discoverMoviesPublisher(page: 1)).results
         XCTAssertEqual(movies.count, 20)
     }
     func testGenreListEndpoint() throws {
-        let genres = try awaitPublisher(provider.genresPublisher()).genres
+        let genres = try awaitPublisher(apiProvider.genresPublisher()).genres
         XCTAssert(!genres.isEmpty)
     }
     func testMovieVideosEndpoint() throws {
-        let movies = try awaitPublisher(provider.popularMoviesPublisher(page: 1)).results
+        let movies = try awaitPublisher(apiProvider.discoverMoviesPublisher(page: 1)).results
         var videos: [Video] = []
         for movie in movies {
-            let movieVideos = try awaitPublisher(provider.movieVides(for: movie.id)).results
+            let movieVideos = try awaitPublisher(apiProvider.movieVides(for: movie.id)).results
             videos.append(contentsOf: movieVideos)
         }
         XCTAssert(!videos.isEmpty)
     }
     func testSearchMovieEndpoint() throws {
-        let searchResults = try awaitPublisher(provider.searchMovie(query: "Star Wars", page: 1)).results
+        let searchResults = try awaitPublisher(apiProvider.searchMovie(query: "Star Wars", page: 1)).results
         XCTAssert(!searchResults.isEmpty)
+    }
+    func testPosterEndpoint() throws {
+        let movies = try awaitPublisher(apiProvider.discoverMoviesPublisher(page: 1)).results
+        guard let posterPath = movies.compactMap(\.posterPath).first else {
+            XCTFail("none of popular movies had poster")
+            return
+        }
+        do {
+            let image = try awaitPublisher(apiProvider.poster(path: posterPath, size: .w500))
+            XCTAssertEqual(image.size.width, 500)
+        } catch {
+            XCTFail("failed to load poster: " + error.localizedDescription)
+        }
     }
 //    func testDiscoverMovieVideoTypes() {
 //        var page: Int = 1
@@ -48,9 +65,10 @@ final class TheMovieDBTests: XCTestCase {
 //        }
 //    }
     // MARK: - Accessors
-    private lazy var provider: MoyaProvider<TheMovieDBAPI> = {
+    private lazy var apiProvider: MoyaProvider<TheMovieDBAPI> = {
         .init(plugins: [
-            AuthorizationPlugin { [unowned self] in token }
+            AuthorizationPlugin { [unowned self] in token },
+            CachePlugin(),
         ])
     }()
     /// yeah i know this is a malpractice, but this is a test task
