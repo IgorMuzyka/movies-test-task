@@ -19,5 +19,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string></string>
+	</dict>
+	<key>TheMovieDBAPIToken</key>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NjE0YjRmMDg3YjIyZTNkMTQ0MTIyOGNhNDg1MTI2ZCIsIm5iZiI6MTcxOTM5NzI4OC4xNzMyNzgsInN1YiI6IjY2N2JlYjJhODdiYmNlMzgyZGFhNmU4YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BmPgf7-U0Olu1ZlaQ6Dn3U_cFpwAtKppWJggvxr4oxI</string>
 </dict>
 </plist>

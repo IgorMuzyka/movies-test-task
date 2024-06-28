@@ -2,24 +2,27 @@
 import CombineMoya
 import Combine
 
-public extension MoyaProvider where Target == TheMovieDBAPI {
-    func discoverMoviesPublisher(
+extension MoyaProvider: TheMovieDBAPIProvider where Target == TheMovieDBAPI {
+    public func discoverMoviesPublisher(
         sortDescriptor: Movie.SortDescriptor = .standard,
         page: Int
     ) -> AnyPublisher<MoviesResponse, MoyaError> {
         codableRequestPublisher(.discoverMovies(sortDescriptor: sortDescriptor, page: page))
     }
-    func genresPublisher() -> AnyPublisher<GenresResponse, MoyaError> {
+    public func genresPublisher() -> AnyPublisher<GenresResponse, MoyaError> {
         codableRequestPublisher(.genres)
     }
-    func movieVides(for movieID: Movie.ID) -> AnyPublisher<MovieVideosResponse, MoyaError> {
+    public func movieVideosPublisher(for movieID: Movie.ID) -> AnyPublisher<MovieVideosResponse, MoyaError> {
         codableRequestPublisher(.movieVideos(movieID: movieID))
     }
-    func searchMovie(query: String, page: Int) -> AnyPublisher<MoviesResponse, MoyaError> {
+    public func searchMoviePublisher(query: String, page: Int) -> AnyPublisher<MoviesResponse, MoyaError> {
         codableRequestPublisher(.searchMovie(query: query, page: page))
     }
-    func poster(path: String, size: Movie.PosterSize) -> AnyPublisher<Image, MoyaError> {
+    public func posterPublisher(path: String, size: Movie.PosterSize) -> AnyPublisher<Image, MoyaError> {
         requestPublisher(.poster(path: path, size: size), callbackQueue: .none)
             .mapImage()
+    }
+    public func movieDetailsPublisher(for movieID: Movie.ID) -> AnyPublisher<Movie.Details, MoyaError> {
+        codableRequestPublisher(.movieDetails(movieID: movieID))
     }
 }

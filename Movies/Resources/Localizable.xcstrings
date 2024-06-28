@@ -1,0 +1,226 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "errorAlertOkButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
+    },
+    "errorAlertTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error Occured"
+          }
+        }
+      }
+    },
+    "errorMovieDetailsUnavailableWhileOffline" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Movie deetails unavailable while offline"
+          }
+        }
+      }
+    },
+    "movieDetailsRatingTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating: %@"
+          }
+        }
+      }
+    },
+    "moviesFeedEmptyStateTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No movies were cached"
+          }
+        }
+      }
+    },
+    "moviesFeedNavigationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popular Movies"
+          }
+        }
+      }
+    },
+    "moviesFeedNoSearchResultsTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nothing was found"
+          }
+        }
+      }
+    },
+    "moviesFeedRefreshControlTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull to Refresh"
+          }
+        }
+      }
+    },
+    "moviesFeedSearchBarPlaceholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search for movie by title"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionPopularityAscending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popularity (ascending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionPopularityDescending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popularity (descending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionRatingAscending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating (ascending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionRatingDescending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rating (descending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionReleaseDateAscending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release date (ascending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionReleaseDateDescending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release date (descending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionsSheetCancelTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionsSheetTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort Options"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionTitleAscending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title (ascending)"
+          }
+        }
+      }
+    },
+    "moviesFeedSortOptionTitleDescending" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title (descending)"
+          }
+        }
+      }
+    },
+    "movieUnspecifiedReleaseDate" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unspecified"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

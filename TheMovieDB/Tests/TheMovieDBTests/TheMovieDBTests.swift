@@ -23,13 +23,13 @@ final class TheMovieDBTests: XCTestCase {
         let movies = try awaitPublisher(apiProvider.discoverMoviesPublisher(page: 1)).results
         var videos: [Video] = []
         for movie in movies {
-            let movieVideos = try awaitPublisher(apiProvider.movieVides(for: movie.id)).results
+            let movieVideos = try awaitPublisher(apiProvider.movieVideosPublisher(for: movie.id)).results
             videos.append(contentsOf: movieVideos)
         }
         XCTAssert(!videos.isEmpty)
     }
     func testSearchMovieEndpoint() throws {
-        let searchResults = try awaitPublisher(apiProvider.searchMovie(query: "Star Wars", page: 1)).results
+        let searchResults = try awaitPublisher(apiProvider.searchMoviePublisher(query: "Star Wars", page: 1)).results
         XCTAssert(!searchResults.isEmpty)
     }
     func testPosterEndpoint() throws {
@@ -39,11 +39,24 @@ final class TheMovieDBTests: XCTestCase {
             return
         }
         do {
-            let image = try awaitPublisher(apiProvider.poster(path: posterPath, size: .w500))
+            let image = try awaitPublisher(apiProvider.posterPublisher(path: posterPath, size: .w500))
             XCTAssertEqual(image.size.width, 500)
         } catch {
             XCTFail("failed to load poster: " + error.localizedDescription)
         }
+    }
+    func testMovieDetailsEndpoint() throws {
+        let movieID: Movie.ID = 573435
+        let details = try awaitPublisher(apiProvider.movieDetailsPublisher(for: movieID))
+        guard let productionCountry = details.productionCountries.first else {
+            XCTFail("no production countries")
+            return
+        }
+        guard let flag = productionCountry.flag else {
+            XCTFail("no flag for production country")
+            return
+        }
+        XCTAssertEqual(flag, "🇺🇸")
     }
 //    func testDiscoverMovieVideoTypes() {
 //        var page: Int = 1

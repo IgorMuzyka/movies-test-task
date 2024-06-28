@@ -8,7 +8,7 @@ public struct MoviesResponse: Codable {
 
 import Foundation.NSDate
 
-public struct Movie: Codable {
+public struct Movie: Codable, Hashable, Equatable {
     public typealias ID = UInt64
     public let id: ID
     public let title: String

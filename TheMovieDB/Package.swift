@@ -14,11 +14,13 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Moya/Moya", .upToNextMajor(from: "15.0.3")),
+        .package(url: "https://github.com/funky-monkey/IsoCountryCodes", .upToNextMajor(from: "1.0.1")),
     ],
     targets: [
         .target(name: "TheMovieDB", dependencies: [
             .byName(name: "Moya"),
             .product(name: "CombineMoya", package: "Moya"),
+            .byName(name: "IsoCountryCodes"),
         ]),
         .testTarget(name: "TheMovieDBTests", dependencies: [
             "TheMovieDB",

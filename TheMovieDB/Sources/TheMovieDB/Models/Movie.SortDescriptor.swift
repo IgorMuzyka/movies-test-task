@@ -1,5 +1,6 @@
+
 public extension Movie {
-    struct SortDescriptor {
+    struct SortDescriptor: Equatable, Hashable {
         public enum Parameter: String {
             case originalTitle = "original_title"
             case popularity = "popularity"
