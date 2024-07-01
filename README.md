@@ -1,3 +1,0 @@
-### Project
-
-- [ ] localize to Ukrainian

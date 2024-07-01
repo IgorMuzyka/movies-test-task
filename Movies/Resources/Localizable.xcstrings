@@ -9,6 +9,12 @@
             "state" : "translated",
             "value" : "Ok"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Добре"
+          }
         }
       }
     },
@@ -20,6 +26,12 @@
             "state" : "translated",
             "value" : "Error Occured"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виникла Помилка"
+          }
         }
       }
     },
@@ -29,7 +41,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Movie deetails unavailable while offline"
+            "value" : "Movie details unavailable while offline"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деталі фільму недоступні за відсутності з'єднання з мережею"
           }
         }
       }
@@ -42,6 +60,12 @@
             "state" : "translated",
             "value" : "Rating: %@"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейтинг: %@"
+          }
         }
       }
     },
@@ -52,6 +76,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No movies were cached"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає закешованих фільмів"
           }
         }
       }
@@ -64,6 +94,12 @@
             "state" : "translated",
             "value" : "Popular Movies"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Популярні Фільми"
+          }
         }
       }
     },
@@ -74,6 +110,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nothing was found"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нічого не знайдено"
           }
         }
       }
@@ -86,6 +128,12 @@
             "state" : "translated",
             "value" : "Pull to Refresh"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Потягни вниз щоб оновити"
+          }
         }
       }
     },
@@ -96,6 +144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search for movie by title"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шукати фільми за назвою"
           }
         }
       }
@@ -108,6 +162,12 @@
             "state" : "translated",
             "value" : "Popularity (ascending)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Популярність (зростання)"
+          }
         }
       }
     },
@@ -118,6 +178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Popularity (descending)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Популярність (спадання)"
           }
         }
       }
@@ -130,6 +196,12 @@
             "state" : "translated",
             "value" : "Rating (ascending)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейтинг (зростання)"
+          }
         }
       }
     },
@@ -140,6 +212,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rating (descending)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейтинг (спадання)"
           }
         }
       }
@@ -152,6 +230,12 @@
             "state" : "translated",
             "value" : "Release date (ascending)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата випуску (зростання)"
+          }
         }
       }
     },
@@ -162,6 +246,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Release date (descending)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата випуску (спадання)"
           }
         }
       }
@@ -174,6 +264,12 @@
             "state" : "translated",
             "value" : "Cancel"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відмінити"
+          }
         }
       }
     },
@@ -184,6 +280,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sort Options"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опіції Сортування"
           }
         }
       }
@@ -196,6 +298,12 @@
             "state" : "translated",
             "value" : "Title (ascending)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва (зростання)"
+          }
         }
       }
     },
@@ -207,6 +315,12 @@
             "state" : "translated",
             "value" : "Title (descending)"
           }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва (спадання)"
+          }
         }
       }
     },
@@ -217,6 +331,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unspecified"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не зазначено"
           }
         }
       }
